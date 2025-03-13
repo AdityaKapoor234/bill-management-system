@@ -9,13 +9,10 @@ const billSlice = createSlice({
     initialState,
     reducers: {
         addBill: (state, action) => {
-            console.log("action.payload", action.payload);
-            console.log("action.payload Before adding:", JSON.parse(JSON.stringify(state.bills)));
             if (!Array.isArray(state.bills)) {
                 state.bills = [];
             }
             state.bills.push(action.payload);
-            console.log("action.payload After adding:", JSON.parse(JSON.stringify(state.bills)));
         },
     },
 });

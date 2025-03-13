@@ -36,7 +36,6 @@ const BillsTable = () => {
                     <div data-component="bill-table">
                         <div className="container-fluid">
                             <div>
-                                {console.log(bills, "bills")}
                                 <h2>Bill Table</h2>
                                 <div className="billTableHead row">
                                     <div className="col-3">Customer Name</div>

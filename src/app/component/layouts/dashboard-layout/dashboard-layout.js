@@ -43,13 +43,8 @@ export default function DashboardLayoutComponent({ children }) {
         router.push("/")
     }
 
-    useEffect(() => {
-        console.log(pathArr, "patharr");
-    }, []);
-
     return (
         <div>
-            {console.log(pathArr, "patharr")}
             <main className="dashboard-background">
                 <div className='container-fluid '>
                     <div className='header'>

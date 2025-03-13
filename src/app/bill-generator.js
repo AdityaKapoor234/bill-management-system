@@ -42,8 +42,6 @@ const BillGenerator = () => {
 
         dispatch(addBill(obj));
 
-        console.log("action.payload obj:", obj);
-
         setCustomerName("");
         setMobileNumber("");
         setAddress("");
