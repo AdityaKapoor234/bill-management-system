@@ -1,9 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
-import { Container, TextField, Button, Typography, Paper } from "@mui/material";
-import { useDispatch } from "react-redux";
-import { addBill } from "./redux/billSlice";
+import React from "react";
 import DashboardLayoutComponent from "./component/layouts/dashboard-layout/dashboard-layout";
 
 const BillGenerator = () => {

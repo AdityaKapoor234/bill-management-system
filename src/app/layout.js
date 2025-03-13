@@ -7,7 +7,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "./redux/store";
-// import BillsTable from "../components/BillsTable";
 import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
 import "./styles/auth-styles.scss";

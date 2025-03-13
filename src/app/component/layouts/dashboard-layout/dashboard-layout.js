@@ -1,21 +1,15 @@
 "use client";
 
-import Head from 'next/head'
 import React from "react";
-import { useEffect, useState } from "react";
-import Router from "next/router"
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useLocation } from 'react-router-dom';
-// import { useRouter } from "next/router";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import LogoutIcon from '@mui/icons-material/Logout';
-import Cookies from "js-cookie";
-import { toast } from 'react-toastify';
-import Link from 'next/link'
 
 export default function DashboardLayoutComponent({ children }) {
 

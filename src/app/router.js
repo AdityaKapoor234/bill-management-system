@@ -1,14 +1,18 @@
+"use client";
+
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./dashboard";
 import CustomerList from "./customer-list";
 import BillGenerator from "./bill-generator";
+import Login from "./page";
 // import NotFound from "./pages/NotFound";
 
 const AppRouter = () => {
     return (
         <Router>
             <Routes>
+                <Route path="/" element={<Login />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/customer-list" element={<CustomerList />} />
                 <Route path="/bill-generator" element={<BillGenerator />} />

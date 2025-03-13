@@ -36,7 +36,7 @@ const BillsTable = () => {
                     <div data-component="bill-table">
                         <div className="container-fluid">
                             <div>
-                                <h2>Bill Table</h2>
+                                <h2>Customer Table</h2>
                                 <div className="billTableHead row">
                                     <div className="col-3">Customer Name</div>
                                     <div className="col-3">Mobile Number</div>
@@ -67,21 +67,6 @@ const BillsTable = () => {
                                         </div>
                                     ))
                                 )}
-
-                                {/* <div className="billTableRow my-3">
-                                    <div className="row">
-                                        <div className="col-3">Customer Name</div>
-                                        <div className="col-3">Mobile Number</div>
-                                        <div className="col-3">Address</div>
-                                        <div className="col-3">Billing Date</div>
-                                    </div>
-                                    <div className="billTableHeadProducts">
-                                        Products
-                                    </div>
-                                    <div>
-                                        name - quantity x price = total
-                                    </div>
-                                </div> */}
                             </div>
                         </div>
                     </div>

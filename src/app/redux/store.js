@@ -1,13 +1,4 @@
-// import { configureStore } from "@reduxjs/toolkit";
-// import billReducer from "./billSlice";
-
-// const store = configureStore({
-//   reducer: {
-//     bill: billReducer,
-//   },
-// });
-
-// export default store;
+"use client";
 
 import { configureStore } from "@reduxjs/toolkit";
 import { persistStore, persistReducer } from "redux-persist";

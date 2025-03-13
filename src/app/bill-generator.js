@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Container, TextField, Button, Typography, Paper } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { addBill } from "./redux/billSlice";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import DashboardLayoutComponent from "./component/layouts/dashboard-layout/dashboard-layout";
 
 const BillGenerator = () => {
