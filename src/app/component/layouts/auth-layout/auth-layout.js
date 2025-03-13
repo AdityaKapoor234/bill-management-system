@@ -11,7 +11,7 @@ export default function AuthLayoutComponent({ children, image }) {
           <div className="row auth-layout-row">
             <div className="col-md-6 auth-hero-container" style={{ background: `url(${image})` }} />
             <div className="col-md-6 col-sm-12">
-              <div className="row auth-margin">
+              {/* <div className="row auth-margin">
                 <div className="col-md-12 col-12 text-center h-70">
                   <img
                     className="auth-logo"
@@ -19,7 +19,7 @@ export default function AuthLayoutComponent({ children, image }) {
                     alt="tagline-logo"
                   />
                 </div>
-              </div>
+              </div> */}
               {children}
             </div>
           </div>

@@ -34,7 +34,10 @@ export default function DashboardLayoutComponent({ children }) {
     }
     const handleLogout = () => {
         // Cookies.remove("access_token_admin")
-        router.push("/")
+        router.push("/");
+        setTimeout(() => {
+            window.location.reload(false);
+        }, 1000);
     }
 
     return (
