@@ -7,6 +7,28 @@ import DashboardLayoutComponent from "./component/layouts/dashboard-layout/dashb
 const BillsTable = () => {
     const bills = useSelector((state) => state.bill.bills);
 
+    const convertDateStringToDate = (dateStr) => {
+        let months = [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+        ];
+
+        let date = new Date(dateStr);
+        let str =
+            date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear();
+        return str;
+    };
+
     return (
         <main>
             <DashboardLayoutComponent>
@@ -33,14 +55,14 @@ const BillsTable = () => {
                                                 <div className="col-3">{bill.customerName}</div>
                                                 <div className="col-3">{bill.mobileNumber}</div>
                                                 <div className="col-3">{bill.address}</div>
-                                                <div className="col-3">{bill.billingDate}</div>
+                                                <div className="col-3">{convertDateStringToDate(bill.billingDate)}</div>
                                             </div>
                                             <div className="billTableHeadProducts">
                                                 Products
                                             </div>
                                             {bill.products.map((p, idx) => (
                                                 <div key={idx}>
-                                                    {p.name} - {p.quantity} x {p.price} = {p.total}
+                                                    {idx+1}) {p.name} - {p.quantity}(Qty) x ₹{parseInt(p.price)?.toFixed(2).toString().replace(/\B(?=(?:(\d\d)+(\d)(?!\d))+(?!\d))/g, ',')}/- = ₹{parseInt(p.total)?.toFixed(2).toString().replace(/\B(?=(?:(\d\d)+(\d)(?!\d))+(?!\d))/g, ',')}/-
                                                 </div>
                                             ))}
                                         </div>

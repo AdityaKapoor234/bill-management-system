@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { useRouter } from "next/router"; // Use useRouter in functional components
+import { useRouter } from "next/navigation";
+import Router from 'next/router';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { ToastContainer, toast } from 'react-toastify';
 import Cookies from "js-cookie";
@@ -9,7 +10,7 @@ import Cookies from "js-cookie";
 const PASSWORD_REGEX = /^[a-zA-Z0-9.!#$%&'*+@/=?^_`():;,"<>{|}~-]{6,}$/;
 
 const Login = () => {
-  const router = useRouter(); // useRouter hook inside a functional component
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 

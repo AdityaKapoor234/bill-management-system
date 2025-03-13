@@ -44,11 +44,11 @@ const BillGenerator = () => {
 
         console.log("action.payload obj:", obj);
 
-        // setCustomerName("");
-        // setMobileNumber("");
-        // setAddress("");
-        // setBillingDate("");
-        // setProducts([{ name: "", quantity: "", price: "", total: "" }]);
+        setCustomerName("");
+        setMobileNumber("");
+        setAddress("");
+        setBillingDate("");
+        setProducts([{ name: "", quantity: "", price: "", total: "" }]);
 
         
         toast.success("Bill Generated Successfully!");

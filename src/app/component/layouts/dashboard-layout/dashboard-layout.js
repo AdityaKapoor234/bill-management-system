@@ -20,8 +20,6 @@ import Link from 'next/link'
 export default function DashboardLayoutComponent({ children }) {
 
     const pathArr = useLocation().pathname.split("/")[1];
-    // const pathArr = useRouter().pathname.split("/")[1]
-    // const pathArr = "dashboard";
     const router = useRouter();
 
     const [tab, setTab] = useState(pathArr);
@@ -41,7 +39,7 @@ export default function DashboardLayoutComponent({ children }) {
         setCategary("")
     }
     const handleLogout = () => {
-        Cookies.remove("access_token_admin")
+        // Cookies.remove("access_token_admin")
         router.push("/")
     }
 
@@ -55,7 +53,7 @@ export default function DashboardLayoutComponent({ children }) {
             <main className="dashboard-background">
                 <div className='container-fluid '>
                     <div className='header'>
-                        <img src="/images/fitcart-logo.png" className="img-fluid" alt="logo" />
+                        Bill Management System
                         {logout &&
                             <ul>
                                 <li onClick={() => handleLogout()}><LogoutIcon className='logout-icon' />Logout</li>

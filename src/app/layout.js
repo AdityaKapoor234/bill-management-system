@@ -5,7 +5,8 @@ import Head from "next/head";
 import { ToastContainer } from "react-toastify";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Provider } from "react-redux";
-import store from "./redux/store";
+import { PersistGate } from "redux-persist/integration/react";
+import { store, persistor } from "./redux/store";
 // import BillsTable from "../components/BillsTable";
 import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
@@ -31,24 +32,26 @@ const geistMono = Geist_Mono({
 
 export default function RootLayout({ children }) {
   return (
-    <Provider store={store}>
-      <html lang="en">
-        <Head>
-          <title>Bill Management System</title>
-          <meta name="description" content="Bill Management System" />
-          <link rel="icon" href="/favicon.ico" />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-          />
-        </Head>
-        <body className={`${geistSans.variable} ${geistMono.variable}`}>
-          <AppRouter>
+    <html lang="en">
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
+            <Head>
+              <title>Bill Management System</title>
+              <meta name="description" content="Bill Management System" />
+              <link rel="icon" href="/favicon.ico" />
+              <link
+                rel="stylesheet"
+                href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+              />
+            </Head>
+            <AppRouter>
             {children}
-          </AppRouter>
-        </body>
-      </html>
-      <ToastContainer />
-    </Provider>
+            </AppRouter>
+            <ToastContainer />
+          </PersistGate>
+        </Provider>
+      </body>
+    </html>
   );
 }
