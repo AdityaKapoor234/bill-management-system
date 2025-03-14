@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { toast } from 'react-toastify';
-// import Cookies from "js-cookie";
+import Cookies from "js-cookie";
 
 const PASSWORD_REGEX = /^[a-zA-Z0-9.!#$%&'*+@/=?^_`():;,"<>{|}~-]{6,}$/;
 
@@ -58,7 +58,7 @@ const Login = () => {
       
       if (data.email === "admin@billmanagemnetsystem.com" && data.password === "password") {
         toast.success('Login successfully');
-        // Cookies.set("access_token_admin", data?.access_token);
+        Cookies.set("access_token_admin", "123");
         router.push('/dashboard'); // Navigate to the dashboard
       } else {
         toast.error('Unable to process your request, please try after sometime.', { autoClose: 5000 });

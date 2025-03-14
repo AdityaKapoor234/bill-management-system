@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useLocation } from 'react-router-dom';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
@@ -10,6 +10,7 @@ import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStore
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import LogoutIcon from '@mui/icons-material/Logout';
+import Cookies from "js-cookie";
 
 export default function DashboardLayoutComponent({ children }) {
 
@@ -33,12 +34,22 @@ export default function DashboardLayoutComponent({ children }) {
         setCategary("")
     }
     const handleLogout = () => {
-        // Cookies.remove("access_token_admin")
+        Cookies.remove("access_token_admin")
         router.push("/");
         setTimeout(() => {
             window.location.reload(false);
-        }, 1000);
+        }, 1500);
     }
+
+    useEffect(() => {
+        let token = Cookies.get("access_token_admin");
+        if (!token) {
+            router.push("/");
+            setTimeout(() => {
+                window.location.reload(false);
+            }, 1500);
+        }
+    }, [])
 
     return (
         <div>
